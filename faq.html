@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ – SnapVault</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px; line-height: 1.7; color: #1c1c1e; background: #f2f2f7;
+    }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    header { text-align: center; margin-bottom: 48px; }
+    header .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, #5856d6, #007aff);
+      color: #fff; font-size: 13px; font-weight: 600; letter-spacing: .4px;
+      padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+    }
+    header h1 { font-size: 34px; font-weight: 700; color: #000; margin-bottom: 8px; }
+    header p { font-size: 16px; color: #636366; }
+    .card {
+      background: #fff; border-radius: 16px; padding: 32px; margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.08);
+    }
+    h2 {
+      font-size: 20px; font-weight: 700; color: #000; margin-bottom: 16px;
+      padding-bottom: 10px; border-bottom: 2px solid #f2f2f7;
+    }
+    .faq-item { border-bottom: 1px solid #f2f2f7; padding: 18px 0; }
+    .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .faq-item summary {
+      display: block; cursor: pointer; font-weight: 600; color: #000;
+      list-style: none; position: relative; padding-right: 28px;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: "+"; position: absolute; right: 0; top: 0;
+      font-size: 20px; font-weight: 400; color: #007aff; transition: transform .2s;
+    }
+    .faq-item[open] summary::after { content: "−"; }
+    .faq-item .answer {
+      margin-top: 10px; color: #3a3a3c; font-size: 15px; line-height: 1.7;
+    }
+    .faq-item .answer p { margin-bottom: 10px; }
+    .faq-item .answer p:last-child { margin-bottom: 0; }
+    .tag {
+      display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .3px;
+      padding: 3px 8px; border-radius: 6px; margin-right: 6px; vertical-align: middle;
+    }
+    .tag-security { background: #ffe5e5; color: #d00; }
+    .tag-premium { background: #f0e6ff; color: #5856d6; }
+    .tag-cloud { background: #e0f0ff; color: #007aff; }
+    .tag-media { background: #e6f9e6; color: #248a24; }
+    .highlight {
+      background: #f0f7ff; border-left: 4px solid #007aff;
+      border-radius: 0 10px 10px 0; padding: 14px 18px; margin-top: 10px;
+      font-size: 14px; color: #1c1c1e;
+    }
+    a { color: #007aff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer { text-align: center; font-size: 13px; color: #8e8e93; margin-top: 48px; }
+    .contact-box {
+      background: linear-gradient(135deg, #f0f7ff, #e8f0ff);
+      border: 1px solid #007aff; border-radius: 12px;
+      padding: 24px; text-align: center; margin: 8px 0;
+    }
+    .contact-box p { margin: 0 0 12px; color: #1c1c1e; font-size: 15px; }
+    .btn {
+      display: inline-block; background: linear-gradient(135deg, #007aff, #5856d6);
+      color: #fff; font-size: 15px; font-weight: 600;
+      padding: 12px 28px; border-radius: 12px; text-decoration: none;
+    }
+    .btn:hover { opacity: .9; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="badge">❓ SnapVault FAQ</div>
+    <h1>Frequently Asked Questions</h1>
+    <p>Everything you need to know about securing your private content.</p>
+  </header>
+
+  <!-- Security & PIN -->
+  <div class="card">
+    <h2>🔐 Security &amp; Access</h2>
+
+    <details class="faq-item">
+      <summary><span class="tag tag-security">SECURITY</span> I forgot my app PIN. How do I reset it?</summary>
+      <div class="answer">
+        <p>If you have Face ID or Touch ID enabled, use biometric authentication to unlock the app and then change your PIN from <strong>Settings → Set / Change PIN</strong>.</p>
+        <p>If biometric unlock is also unavailable, sign out of your Google account and sign back in. This will reset your PIN and prompt you to create a new one. Your encrypted photos, videos, and other vault data will <strong>not</strong> be deleted — they sync back from the cloud once you sign in.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="tag tag-security">SECURITY</span> I forgot my album PIN. How can I access my locked album?</summary>
+      <div class="answer">
+        <p>Album PINs are separate from your main app PIN. There is no automated recovery for album PINs — you need to remember the PIN you set for each album.</p>
+        <p>If you're already inside the app (past the main lock screen), you can remove or change an album's PIN from the album's settings menu. If you're completely locked out, the only option is to delete the album and re-create it, which will remove the media inside.</p>
+        <div class="highlight">💡 <strong>Tip:</strong> Consider storing your album PINs in the built-in Password Manager for safekeeping.</div>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="tag tag-security">SECURITY</span> How does SnapVault encryption work?</summary>
+      <div class="answer">
+        <p>SnapVault uses <strong>AES-256-GCM</strong> end-to-end encryption — the same standard used by banks and governments. Here's how it works:</p>
+        <p>Every photo, video, document, text note, password, and voice memo is encrypted <strong>on your device</strong> before it's stored locally or uploaded to the cloud. Your encryption key is generated and stored securely in the iOS Keychain.</p>
+        <p>Even if someone gains access to the cloud storage, they cannot read your files without your encryption key. <strong>We cannot access your content — only you can.</strong></p>
+        <div class="highlight">🔑 Your PIN is hashed with SHA-256 and never stored in plain text. Encryption keys never leave your device unprotected.</div>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="tag tag-security">SECURITY</span> What are Break-In Alerts and how do they work?</summary>
+      <div class="answer">
+        <p>Break-In Alerts is a security feature that detects unauthorized access attempts. When someone enters the <strong>wrong PIN 3 times</strong>, SnapVault silently captures a photo using the front camera and logs the attempt with the date, time, and device information.</p>
+        <p>You can review all break-in attempts in <strong>Settings → View Break-In Attempts</strong>, which shows a timeline with intruder photos and timestamps.</p>
+        <p>The toggle to enable Break-In Alerts is free for all users. <strong>Viewing the captured break-in photos requires a Premium subscription.</strong></p>
+      </div>
+    </details>
+  </div>
+
+  <!-- Decoy / Cover Screen -->
+  <div class="card">
+    <h2>🎭 Decoy / Cover Screen</h2>
+
+    <details class="faq-item">
+      <summary><span class="tag tag-premium">PREMIUM</span> What is the Decoy Screen and how do I use it?</summary>
+      <div class="answer">
+        <p>The Decoy Screen disguises SnapVault as an innocent-looking <strong>Notes app</strong> when opened. Anyone glancing at your phone will see a simple notes interface instead of a vault.</p>
+        <p>To reveal your real vault, <strong>tap anywhere on the cover screen 5 times</strong>, then enter your secret Cover PIN. This PIN is separate from your main app PIN for extra security.</p>
+        <p>You can enable it in <strong>Settings → Cover / Decoy Screen</strong>, set your Cover PIN, and even preview how it looks. The decoy notes you create on the cover screen are completely separate from your real vault notes.</p>
+        <div class="highlight">🎭 This is a Premium feature. Upgrade to use the Decoy Screen.</div>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="tag tag-premium">PREMIUM</span> Can someone tell the Decoy Screen is fake?</summary>
+      <div class="answer">
+        <p>The Decoy Screen is designed to look and function like a real notes app. You can create, edit, and delete notes on it — making it fully convincing. There are no visible indicators that it's a cover for a vault.</p>
+        <p>The 5-tap reveal gesture is invisible to anyone who doesn't know about it. Cover screen notes are stored separately and are never mixed with your real vault data.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- Cloud & Data -->
+  <div class="card">
+    <h2>☁️ Cloud Storage &amp; Data</h2>
+
+    <details class="faq-item">
+      <summary><span class="tag tag-cloud">CLOUD</span> How much cloud storage do I get?</summary>
+      <div class="answer">
+        <p>SnapVault offers two tiers of cloud storage:</p>
+        <p><strong>Free:</strong> Up to <strong>50 files</strong> (photos, videos, and documents combined) synced to the cloud.</p>
+        <p><strong>Premium:</strong> Up to <strong>10,000 files</strong> synced to the cloud — more than enough for most users.</p>
+        <p>You can check your current usage in <strong>Settings → Storage</strong>, which shows a visual progress bar with your file count. You'll receive a gentle reminder when you reach 70% capacity.</p>
+        <div class="highlight">📱 <strong>Local storage is always unlimited</strong> — the limit only applies to cloud-synced files. Your photos and videos are always safe on your device regardless of your plan.</div>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="tag tag-cloud">CLOUD</span> I deleted the app. Is my data gone forever?</summary>
+      <div class="answer">
+        <p>It depends on whether you had <strong>Cloud Sync</strong> enabled:</p>
+        <p><strong>Cloud Sync ON:</strong> Your encrypted files are still backed up in the cloud. Reinstall SnapVault, sign in with the same Google account, and your vault will sync back automatically. You'll need to set a new PIN.</p>
+        <p><strong>Cloud Sync OFF:</strong> All data stored only on your device is permanently lost when the app is deleted. There is no way to recover locally-stored data after uninstalling.</p>
+        <div class="highlight">⚠️ We strongly recommend keeping Cloud Sync enabled to protect against accidental data loss.</div>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="tag tag-cloud">CLOUD</span> What happens to my data if I delete my account?</summary>
+      <div class="answer">
+        <p>Deleting your account <strong>permanently removes all your data</strong> from our servers within 30 days. This includes all photos, videos, documents, notes, passwords, and voice memos stored in the cloud.</p>
+        <p>This action <strong>cannot be undone</strong>. Please make sure you've exported or backed up anything you need before deleting your account. You can delete your account from <strong>Settings → Delete Account</strong>.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- Features -->
+  <div class="card">
+    <h2>📱 Features</h2>
+
+    <details class="faq-item">
+      <summary><span class="tag tag-media">MEDIA</span> Will importing photos delete them from my Camera Roll?</summary>
+      <div class="answer">
+        <p>Not by default. SnapVault has an optional <strong>"Delete Originals After Import"</strong> setting that is <strong>turned off</strong> by default.</p>
+        <p>When enabled, SnapVault will ask for your confirmation after each import to delete the original photos from your Camera Roll. You can toggle this at any time in <strong>Settings → Delete Originals After Import</strong>.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="tag tag-media">MEDIA</span> What types of content can I store in SnapVault?</summary>
+      <div class="answer">
+        <p>SnapVault is a complete privacy vault. You can securely store:</p>
+        <p>📷 <strong>Photos &amp; Videos</strong> — Import from your library or capture directly with the in-app camera (photos never touch your Camera Roll).</p>
+        <p>📝 <strong>Text Notes</strong> — Encrypted notes for sensitive information.</p>
+        <p>🔑 <strong>Passwords</strong> — Store website credentials with title, username, password, URL, and notes — all individually encrypted.</p>
+        <p>🎙️ <strong>Voice Memos</strong> — Record and encrypt audio recordings.</p>
+        <p>📄 <strong>Documents</strong> — Upload and store important documents securely.</p>
+        <p>Everything is encrypted with AES-256-GCM at rest and organized across dedicated tabs in the app.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="tag tag-media">MEDIA</span> How do albums work? Can I protect individual albums?</summary>
+      <div class="answer">
+        <p>You can create unlimited albums to organize your photos and videos. Each album can optionally have its own <strong>4-digit PIN lock</strong> — separate from your main app PIN — for an extra layer of privacy.</p>
+        <p>Albums also support a <strong>Decoy PIN</strong>: you can set a fake PIN that, when entered, shows an empty decoy album instead of the real content. Only the real PIN reveals your actual photos.</p>
+        <p>A default "Camera Roll" album is created automatically for quick captures from the in-app camera.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- Subscription -->
+  <div class="card">
+    <h2>💎 Subscription &amp; Billing</h2>
+
+    <details class="faq-item">
+      <summary><span class="tag tag-premium">PREMIUM</span> What's included in SnapVault Premium?</summary>
+      <div class="answer">
+        <p>Premium unlocks the full SnapVault experience:</p>
+        <p>☁️ <strong>10,000 cloud files</strong> (vs. 50 on free)</p>
+        <p>🎭 <strong>Decoy / Cover Screen</strong></p>
+        <p>📸 <strong>View Break-In Alert photos</strong></p>
+        <p>⚡ <strong>Unrestricted cloud uploads</strong></p>
+        <p>🛡️ <strong>Priority support</strong></p>
+        <p>Plans: <strong>Monthly</strong> ($9.99/mo), <strong>Yearly</strong> ($49.99/yr — save 58%), or <strong>Lifetime</strong> ($99.99 one-time). All subscriptions include a <strong>7-day free trial</strong>.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="tag tag-premium">PREMIUM</span> How do I restore my purchases or cancel my subscription?</summary>
+      <div class="answer">
+        <p><strong>Restore purchases:</strong> Open SnapVault → Settings → Restore Purchases. Make sure you're signed in with the same Apple ID used for the original purchase.</p>
+        <p><strong>Cancel subscription:</strong> On your iPhone, go to <strong>Settings → tap your name → Subscriptions → SnapVault → Cancel Subscription</strong>. Your Premium access continues until the end of the current billing period.</p>
+        <p>Lifetime purchases never expire and don't need to be renewed.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- Still need help -->
+  <div class="card">
+    <h2>Still have questions?</h2>
+    <div class="contact-box">
+      <p>Can't find what you're looking for? Reach out to our support team.<br>We typically respond within <strong>24–48 hours</strong>.</p>
+      <a class="btn" href="mailto:saslabs.corp@gmail.com">Email Us</a>
+      <p style="margin-top:14px; font-size:14px; color:#636366;">saslabs.corp@gmail.com</p>
+    </div>
+  </div>
+
+  <!-- Legal links -->
+  <div class="card" style="text-align:center; padding: 24px;">
+    <a href="https://sasilabs.github.io/snapvault/privacy">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="https://sasilabs.github.io/snapvault/terms">Terms of Service</a> &nbsp;·&nbsp;
+    <a href="https://sasilabs.github.io/snapvault/support">Support</a>
+  </div>
+
+  <footer>
+    <p>© 2026 SAS Labs · SnapVault iOS Application</p>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – SnapVault</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #1c1c1e;
+      background: #f2f2f7;
+    }
+    .container { max-width: 780px; margin: 0 auto; padding: 48px 24px 80px; }
+    header { text-align: center; margin-bottom: 48px; }
+    header .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, #007aff, #5856d6);
+      color: #fff; font-size: 13px; font-weight: 600; letter-spacing: .4px;
+      padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+    }
+    header h1 { font-size: 34px; font-weight: 700; color: #000; margin-bottom: 8px; }
+    header .meta { font-size: 14px; color: #636366; }
+    .card {
+      background: #fff; border-radius: 16px;
+      padding: 32px; margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.08);
+    }
+    h2 {
+      font-size: 20px; font-weight: 700; color: #000;
+      margin-bottom: 16px; padding-bottom: 10px;
+      border-bottom: 2px solid #f2f2f7;
+    }
+    h3 { font-size: 16px; font-weight: 600; color: #1c1c1e; margin: 20px 0 8px; }
+    p { margin-bottom: 14px; color: #3a3a3c; }
+    ul, ol { padding-left: 22px; margin-bottom: 14px; color: #3a3a3c; }
+    ul li, ol li { margin-bottom: 6px; }
+    .highlight {
+      background: #f2f7ff; border-left: 4px solid #007aff;
+      padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 16px 0;
+    }
+    .highlight p { margin: 0; color: #1c1c1e; font-size: 15px; }
+    .encryption-box {
+      background: linear-gradient(135deg, #f0f9f0, #e8f8e8);
+      border: 1px solid #34c759; border-radius: 12px;
+      padding: 20px; margin: 16px 0;
+    }
+    .encryption-box h3 { color: #1a7f1a; margin-top: 0; }
+    .encryption-box ul { color: #2d6a2d; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    th { background: #f2f2f7; padding: 10px 14px; text-align: left; font-weight: 600; color: #1c1c1e; border-radius: 8px 8px 0 0; }
+    td { padding: 10px 14px; border-bottom: 1px solid #f2f2f7; color: #3a3a3c; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    .tag {
+      display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px;
+      border-radius: 6px; margin-left: 6px;
+    }
+    .tag-no  { background: #d1f2de; color: #1a7f3c; }
+    .tag-yes { background: #ffe8cc; color: #b25000; }
+    a { color: #007aff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer { text-align: center; font-size: 13px; color: #8e8e93; margin-top: 48px; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="badge">🔒 Privacy Policy</div>
+    <h1>SnapVault</h1>
+    <p class="meta">Effective Date: April 1, 2026 &nbsp;·&nbsp; Last Updated: April 1, 2026</p>
+  </header>
+
+  <!-- Intro -->
+  <div class="card">
+    <h2>1. Introduction</h2>
+    <p>Welcome to <strong>SnapVault</strong>, a private photo, video, and document vault developed by <strong>SAS Labs</strong> ("we", "us", or "our"). We are committed to protecting your personal data and your right to privacy.</p>
+    <p>This Privacy Policy explains what information we collect, how we use it, and what rights you have in relation to it. It applies to all users of the SnapVault iOS application ("App").</p>
+    <div class="highlight">
+      <p>📌 <strong>Short version:</strong> Your private media never leaves your device unencrypted. We do not sell your data or use it for advertising.</p>
+    </div>
+  </div>
+
+  <!-- Encryption -->
+  <div class="card">
+    <h2>2. Encryption &amp; Security Architecture</h2>
+    <p>SnapVault is built with a security-first architecture. All user content is encrypted before it is written to local storage or transmitted to cloud servers.</p>
+
+    <div class="encryption-box">
+      <h3>🔐 Encryption Specification</h3>
+      <ul>
+        <li><strong>Algorithm:</strong> AES-256-GCM (Advanced Encryption Standard, 256-bit key, Galois/Counter Mode)</li>
+        <li><strong>Key Size:</strong> 256 bits (32 bytes)</li>
+        <li><strong>Mode:</strong> GCM — provides both confidentiality and authenticated integrity (tamper detection)</li>
+        <li><strong>Key Storage:</strong> Encryption keys are stored exclusively in the Apple Keychain with <code>kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly</code> protection class</li>
+        <li><strong>Encryption Library:</strong> Apple CryptoKit (<code>AES.GCM</code>) — Apple's on-device, FIPS-validated cryptographic framework</li>
+        <li><strong>Thumbnail Cache:</strong> Decrypted thumbnail cache files are also AES-256-GCM encrypted at rest using the same key</li>
+        <li><strong>Transport:</strong> All network traffic uses TLS 1.2+ (enforced via App Transport Security; no arbitrary loads are permitted)</li>
+      </ul>
+    </div>
+
+    <h3>Authentication</h3>
+    <ul>
+      <li>Google Sign-In via Firebase Authentication (OAuth 2.0, OpenID Connect)</li>
+      <li>Optional PIN (hashed with SHA-256 before storage)</li>
+      <li>Optional Face ID / Touch ID (via Apple LocalAuthentication framework, biometric data never leaves the Secure Enclave)</li>
+    </ul>
+  </div>
+
+  <!-- Information Collected -->
+  <div class="card">
+    <h2>3. Information We Collect</h2>
+
+    <h3>3.1 Information You Provide</h3>
+    <table>
+      <tr><th>Data</th><th>Purpose</th><th>Linked to You</th></tr>
+      <tr><td>Google Account email &amp; display name</td><td>Authentication, account creation</td><td><span class="tag tag-yes">Yes</span></td></tr>
+      <tr><td>Photos, videos, documents, text notes</td><td>Core vault functionality (encrypted)</td><td><span class="tag tag-no">No — encrypted</span></td></tr>
+      <tr><td>In-app purchase history</td><td>Subscription status verification</td><td><span class="tag tag-yes">Yes</span></td></tr>
+      <tr><td>PIN (SHA-256 hash only)</td><td>Album and app lock security</td><td><span class="tag tag-no">No</span></td></tr>
+    </table>
+
+    <h3>3.2 Information Collected Automatically</h3>
+    <table>
+      <tr><th>Data</th><th>Purpose</th><th>Tracking</th></tr>
+      <tr><td>Device model, OS version, app version</td><td>Analytics &amp; crash diagnostics</td><td><span class="tag tag-no">No</span></td></tr>
+      <tr><td>Anonymous usage events (screen views, feature usage)</td><td>Product improvement analytics</td><td><span class="tag tag-no">No</span></td></tr>
+      <tr><td>Break-in alert photo (front camera)</td><td>Captured locally when wrong PIN is entered; stored in your vault</td><td><span class="tag tag-no">No — on-device only</span></td></tr>
+      <tr><td>Firebase anonymous installation ID</td><td>Analytics session association</td><td><span class="tag tag-no">No</span></td></tr>
+    </table>
+
+    <div class="highlight">
+      <p>🚫 We do <strong>not</strong> collect advertising identifiers (IDFA), use cross-app tracking, or share any data with advertising networks. <code>NSPrivacyTracking</code> is set to <code>false</code>.</p>
+    </div>
+  </div>
+
+  <!-- How We Use -->
+  <div class="card">
+    <h2>4. How We Use Your Information</h2>
+    <ul>
+      <li><strong>App Functionality:</strong> To encrypt, store, and decrypt your media files and documents on-device and in the cloud backup</li>
+      <li><strong>Authentication:</strong> To identify your account and sync your encrypted vault across your devices via Google Sign-In and Firebase</li>
+      <li><strong>Subscription Management:</strong> To verify and manage your subscription status via Apple StoreKit 2 and Firebase Firestore</li>
+      <li><strong>Analytics:</strong> To understand how features are used and improve the app (anonymous, non-tracking events via Firebase Analytics)</li>
+      <li><strong>Security:</strong> To detect unauthorized access attempts via break-in alert capture (stored only on your device)</li>
+      <li><strong>Legal Compliance:</strong> To comply with applicable laws and enforce our Terms of Service</li>
+    </ul>
+  </div>
+
+  <!-- Third-Party Services -->
+  <div class="card">
+    <h2>5. Third-Party Services</h2>
+    <p>SnapVault uses the following third-party services. Each operates under its own privacy policy.</p>
+    <table>
+      <tr><th>Service</th><th>Provider</th><th>Purpose</th><th>Privacy Policy</th></tr>
+      <tr><td>Firebase Authentication</td><td>Google LLC</td><td>Sign-in via Google account</td><td><a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></td></tr>
+      <tr><td>Firebase Firestore</td><td>Google LLC</td><td>Encrypted cloud metadata storage</td><td><a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></td></tr>
+      <tr><td>Firebase Storage</td><td>Google LLC</td><td>Encrypted media file cloud backup</td><td><a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></td></tr>
+      <tr><td>Firebase Analytics</td><td>Google LLC</td><td>Anonymous usage analytics</td><td><a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></td></tr>
+      <tr><td>Google Sign-In</td><td>Google LLC</td><td>OAuth 2.0 authentication</td><td><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></td></tr>
+      <tr><td>Apple StoreKit 2</td><td>Apple Inc.</td><td>In-app purchase processing</td><td><a href="https://www.apple.com/legal/privacy" target="_blank">apple.com/legal/privacy</a></td></tr>
+    </table>
+    <p>All media files uploaded to Firebase Storage are encrypted with AES-256-GCM on-device <strong>before</strong> transmission. Firebase only stores ciphertext and cannot read your content.</p>
+  </div>
+
+  <!-- Device Permissions -->
+  <div class="card">
+    <h2>6. Device Permissions</h2>
+    <table>
+      <tr><th>Permission</th><th>When Requested</th><th>Why It's Needed</th></tr>
+      <tr><td>Camera</td><td>When using in-app camera</td><td>Capture photos/videos directly into the encrypted vault</td></tr>
+      <tr><td>Photo Library (read)</td><td>When importing photos/videos</td><td>Select media to import and encrypt</td></tr>
+      <tr><td>Photo Library (write/delete)</td><td>When "Delete Originals" is enabled</td><td>Remove originals from Camera Roll after secure import</td></tr>
+      <tr><td>Microphone</td><td>When recording video</td><td>Record audio for video files</td></tr>
+      <tr><td>Face ID</td><td>When enabling biometric lock</td><td>Unlock the vault via Face ID / Touch ID (data stays in Secure Enclave)</td></tr>
+    </table>
+    <p>You can revoke any permission at any time in <strong>Settings → Privacy &amp; Security</strong> on your device.</p>
+  </div>
+
+  <!-- Data Retention -->
+  <div class="card">
+    <h2>7. Data Retention &amp; Deletion</h2>
+    <h3>Local Data</h3>
+    <p>Encrypted media files and thumbnails are stored in the app's sandboxed container. They are automatically removed when you delete the app, or you can manually delete individual items or entire albums within the app.</p>
+    <h3>Cloud Data</h3>
+    <p>If cloud sync is enabled, encrypted files are stored in Firebase Storage and metadata in Firebase Firestore under your user account. You can:</p>
+    <ul>
+      <li>Disable cloud sync at any time in Settings</li>
+      <li>Delete individual files, albums, or documents from within the app (also removes from cloud)</li>
+      <li>Permanently delete your entire account and all associated cloud data via <strong>Settings → Delete Account</strong></li>
+    </ul>
+    <p>Account deletion permanently removes all data from our servers within <strong>30 days</strong>.</p>
+  </div>
+
+  <!-- Children -->
+  <div class="card">
+    <h2>8. Children's Privacy</h2>
+    <p>SnapVault is not directed to children under the age of 13 (or 16 in the European Economic Area). We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us immediately and we will delete it.</p>
+  </div>
+
+  <!-- Your Rights -->
+  <div class="card">
+    <h2>9. Your Privacy Rights</h2>
+    <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+    <ul>
+      <li><strong>Access:</strong> Request a copy of personal data we hold about you</li>
+      <li><strong>Rectification:</strong> Request correction of inaccurate data</li>
+      <li><strong>Erasure:</strong> Request deletion of your data ("Right to be Forgotten")</li>
+      <li><strong>Portability:</strong> Request a machine-readable copy of your data</li>
+      <li><strong>Restriction:</strong> Request that we limit processing of your data</li>
+      <li><strong>Objection:</strong> Object to processing based on legitimate interests</li>
+    </ul>
+    <p>To exercise any right, contact us at <a href="mailto:saslabs.corp@gmail.com">saslabs.corp@gmail.com</a>. We will respond within 30 days.</p>
+    <p>California residents may exercise rights under CCPA. EEA/UK residents may exercise rights under GDPR/UK GDPR. We do not sell personal information.</p>
+  </div>
+
+  <!-- Changes -->
+  <div class="card">
+    <h2>10. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we make significant changes, we will notify you by updating the "Last Updated" date at the top of this page and, where appropriate, through an in-app notification. Your continued use of SnapVault after changes are posted constitutes your acceptance of the updated policy.</p>
+  </div>
+
+  <!-- Contact -->
+  <div class="card">
+    <h2>11. Contact Us</h2>
+    <p>If you have questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact us:</p>
+    <ul>
+      <li><strong>Developer:</strong> SAS Labs</li>
+      <li><strong>Email:</strong> <a href="mailto:saslabs.corp@gmail.com">saslabs.corp@gmail.com</a></li>
+      <li><strong>Privacy Policy URL:</strong> <a href="https://sasilabs.github.io/snapvault/privacy">https://sasilabs.github.io/snapvault/privacy</a></li>
+      <li><strong>Terms of Service URL:</strong> <a href="https://sasilabs.github.io/snapvault/terms">https://sasilabs.github.io/snapvault/terms</a></li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>© 2026 SAS Labs. All rights reserved. &nbsp;·&nbsp; SnapVault iOS Application</p>
+    <p style="margin-top:8px;">
+      <a href="https://sasilabs.github.io/snapvault/privacy">Privacy Policy</a>
+      &nbsp;·&nbsp;
+      <a href="https://sasilabs.github.io/snapvault/terms">Terms of Service</a>
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>

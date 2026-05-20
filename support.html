@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support – SnapVault</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px; line-height: 1.7; color: #1c1c1e; background: #f2f2f7;
+    }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    header { text-align: center; margin-bottom: 48px; }
+    header .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, #007aff, #34c759);
+      color: #fff; font-size: 13px; font-weight: 600; letter-spacing: .4px;
+      padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+    }
+    header h1 { font-size: 34px; font-weight: 700; color: #000; margin-bottom: 8px; }
+    header p { font-size: 16px; color: #636366; }
+    .card {
+      background: #fff; border-radius: 16px; padding: 32px; margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.08);
+    }
+    h2 { font-size: 20px; font-weight: 700; color: #000; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #f2f2f7; }
+    h3 { font-size: 16px; font-weight: 600; color: #1c1c1e; margin: 20px 0 8px; }
+    p { margin-bottom: 14px; color: #3a3a3c; }
+    ul { padding-left: 22px; margin-bottom: 14px; color: #3a3a3c; }
+    ul li { margin-bottom: 8px; }
+    .contact-box {
+      background: linear-gradient(135deg, #f0f7ff, #e8f0ff);
+      border: 1px solid #007aff; border-radius: 12px;
+      padding: 24px; text-align: center; margin: 8px 0;
+    }
+    .contact-box p { margin: 0 0 12px; color: #1c1c1e; font-size: 15px; }
+    .btn {
+      display: inline-block; background: linear-gradient(135deg, #007aff, #5856d6);
+      color: #fff; font-size: 15px; font-weight: 600;
+      padding: 12px 28px; border-radius: 12px; text-decoration: none;
+    }
+    .btn:hover { opacity: .9; }
+    .faq-item { border-bottom: 1px solid #f2f2f7; padding: 16px 0; }
+    .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .faq-item strong { display: block; color: #000; margin-bottom: 6px; }
+    a { color: #007aff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer { text-align: center; font-size: 13px; color: #8e8e93; margin-top: 48px; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="badge">🔒 SnapVault Support</div>
+    <h1>How can we help?</h1>
+    <p>We're here to help you get the most out of SnapVault.</p>
+  </header>
+
+  <!-- Contact -->
+  <div class="card">
+    <h2>Contact Support</h2>
+    <div class="contact-box">
+      <p>Have a question, found a bug, or need help with your account?<br>We typically respond within <strong>24–48 hours</strong>.</p>
+      <a class="btn" href="mailto:saslabs.corp@gmail.com">Email Us</a>
+      <p style="margin-top:14px; font-size:14px; color:#636366;">saslabs.corp@gmail.com</p>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="card">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <strong>How do I restore my purchases after reinstalling the app?</strong>
+      Open SnapVault → Settings → Restore Purchases. Make sure you're signed in with the same Apple ID used for the original purchase.
+    </div>
+    <div class="faq-item">
+      <strong>I forgot my PIN. How do I reset it?</strong>
+      If you have Face ID enabled, use it to unlock the app. If Face ID is also unavailable, sign out and sign back in with your Google account — this resets the PIN. Note: this does not delete your encrypted media.
+    </div>
+    <div class="faq-item">
+      <strong>Will my photos be deleted from my Camera Roll when I import them?</strong>
+      Only if you have "Delete Originals After Import" enabled in Settings. This is off by default. You can toggle it at any time.
+    </div>
+    <div class="faq-item">
+      <strong>Are my photos and videos actually encrypted?</strong>
+      Yes. Every file is encrypted on your device with AES-256-GCM (the same standard used by banks and governments) before being stored locally or backed up to the cloud. We cannot access your content.
+    </div>
+    <div class="faq-item">
+      <strong>My cloud sync isn't working. What should I do?</strong>
+      Check your internet connection, then go to Settings and toggle Cloud Sync off and back on. If the issue persists, sign out and sign back in.
+    </div>
+    <div class="faq-item">
+      <strong>How do I cancel my subscription?</strong>
+      On your iPhone: Settings → tap your name → Subscriptions → SnapVault → Cancel. Your access continues until the end of the current billing period.
+    </div>
+    <div class="faq-item">
+      <strong>I deleted the app. Is my data gone?</strong>
+      Local data is removed when you delete the app. If you had cloud sync enabled, your encrypted files are still in the cloud. Reinstall the app, sign in with the same Google account, and your vault will sync back.
+    </div>
+    <div class="faq-item">
+      <strong>What happens to my data if I delete my account?</strong>
+      Deleting your account removes all data from our servers permanently within 30 days. This action cannot be undone.
+    </div>
+  </div>
+
+  <!-- Links -->
+  <div class="card">
+    <h2>Legal</h2>
+    <ul>
+      <li><a href="https://sasilabs.github.io/snapvault/privacy">Privacy Policy</a></li>
+      <li><a href="https://sasilabs.github.io/snapvault/terms">Terms of Service</a></li>
+      <li><a href="https://sasilabs.github.io/snapvault/faq">FAQ</a></li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>© 2026 SAS Labs · SnapVault iOS Application</p>
+  </footer>
+
+</div>
+</body>
+</html>
